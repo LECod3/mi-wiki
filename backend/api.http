@@ -1,0 +1,32 @@
+//Acceder a las notas
+
+GET http://localhost:4000/notes
+
+//Crear una nota
+
+POST http://localhost:4000/notes
+Content-Type: application/json
+
+{
+  "title": "nota-test-1",
+  "content": "prueba-1",
+  "tags": ["prueba", "backend"]
+}
+
+// Buscar nota específica
+GET http://localhost:4000/notes/nota-test-1
+
+// Borrar nota
+DELETE http://localhost:4000/notes/nota-test-1
+
+// Buscar inexistente (Para probar 404)
+GET http://localhost:4000/notes/NotaQueNoExiste
+
+// Actualizar una nota
+PUT http://localhost:4000/notes/nota-test-1
+Content-Type: application/json
+
+{
+  "content": "modificacion-1",
+  "tags": ["editado", "backend"]
+}
